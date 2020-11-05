@@ -1,6 +1,7 @@
 package io.hullaert.springboot.controller;
 
 import io.hullaert.springboot.service.DateService;
+import io.hullaert.springboot.service.DateServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ public class HelloController {
 
 	@Autowired
 	public HelloController() {
-		this.dateService = new DateService();
+		this.dateService = new DateServiceImpl();
 	}
 
 	@RequestMapping("/")
@@ -23,9 +24,8 @@ public class HelloController {
 	}
 
 	private String getWelcomeMsg() {
-		String day = "<span>Greetings from Spring Boot! We are "
+		return "<span>Greetings from Spring Boot! We are "
 				+ dateService.getCurrentDay() + "</span><br><span>"
 				+ dateService.getDateTime() + "</span>";
-		return day;
 	}
 }
