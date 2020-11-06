@@ -2,7 +2,9 @@ language: java
 jdk:
   - oraclejdk9
 
-after_script: cat /home/travis/build/nDija/springboot/build/reports/tests/test/index.html
+after_script:
+  - cat /home/travis/build/nDija/springboot/build/reports/tests/test/index.html
+  - cat /home/travis/build/nDija/springboot/classes/io.hullaert.springboot.service.PdfServiceTest.html
 
 before_install:
   - wget https://distfiles.macports.org/gradle/gradle-6.5-bin.zip
