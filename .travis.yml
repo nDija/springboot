@@ -2,6 +2,8 @@ language: java
 jdk:
   - oraclejdk9
 
+before_script: cat /home/travis/build/nDija/springboot/build/reports/tests/test/index.html
+
 before_install:
   - wget https://distfiles.macports.org/gradle/gradle-6.5-bin.zip
   - unzip -qq gradle-6.5-bin.zip
