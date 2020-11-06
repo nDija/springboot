@@ -31,6 +31,7 @@ public class PdfServiceTest {
         ticketMap.put(TicketField.CLIENT_NAME, "LISA CHETE");
         ticketMap.put(TicketField.PRODUCT_ID, "1100458");
         ticketMap.put(TicketField.PRODUCT_NAME, "Tablette HUAWEI RE7 Projet BOM M5 10.8'");
+        ticketMap.put(TicketField.CODE_BARE_IMG_SRC, tmpdir + file.getName());
         ticketMap.put(TicketField.CODE39, barCode39);
         pdfService.createPDF("templateTicket.html", ticketMap, tmpdir);
 
