@@ -7,8 +7,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
+@EnableScheduling
 public class Application {
 
 	public static void main(String[] args) {
@@ -27,5 +30,10 @@ public class Application {
 				System.out.println(beanName);
 			}
 		};
+	}
+
+	@Bean
+	public WebClient webClient() {
+		return WebClient.create();
 	}
 }
